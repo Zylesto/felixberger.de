@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="de">
+   <head>
+      <title>Startseite</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+      <meta charset="utf-8">
+      <meta name="author" content="Felix Berger">
+      <meta name="keywords" content="Tools, Zeitrechner">
+      <meta name="description" content="Die private Website von Felix Berger">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+      <meta name="theme-color" content="#ffffff">
+      <link rel="stylesheet" href="styleTools.css" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+      <link rel="manifest" href="/favicon/site.webmanifest">
+      <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#757575">
+      <link rel="shortcut icon" href="/favicon/favicon.ico">
+      <script type="text/javascript">
+      function calculate()
+      {
+        var startDate = new Date(document.getElementsByName("from")[0].value);
+        var endDate = new Date(document.getElementsByName("to")[0].value);
+        var result = document.getElementById("result");
+        result.innerHTML = "";
+        if(startDate == "Invalid Date" || endDate == "Invalid Date"){
+            result.innerHTML = "Bitte beide Felder ausfüllen."
+        }
+        else
+        {
+        var diff = Math.abs(endDate - startDate);
+        var years = Math.abs(Math.floor((diff / (31536000000))));
+        diff = diff - (years * 31536000000);
+        var days = Math.abs(Math.floor((diff / (86400000))));
+        diff = diff - (days * 86400000);
+        var hours = Math.abs(Math.floor((diff / (3600000))));
+        diff = diff - (hours * 3600000);
+        var minutes = Math.abs(Math.floor((diff / (60000))));
+        result.innerHTML += "Der Unterschied  liegt bei: <br>";
+        result.innerHTML += years + " Jahren,<br>";
+        result.innerHTML += days + " Tagen,<br>";
+        result.innerHTML += hours + " Stunden,<br>";
+        result.innerHTML += minutes + " Minuten.<br>.";
+        }
+      }
+      </script>
+   </head>
+   <body>
+     <nav>
+        <ul class="center_menu">
+           <li><a href="index.html">Start</a></li>
+           <li><a href="cv.html">Lebenslauf</a></li>
+           <li><a href="projects.html">Projekte</a></li>
+           <li><a href="tools.html">Tools</a></li>
+           <li><a href="contact.html">Kontakt</a></li>
+         </ul>
+     </nav>
+      <main>
+        <div class="tools_parent">
+           <div class="tools_child">
+              <h1 id="tools">Tools.</h1>
+              <div class="tools_grid">
+                 <div>
+                    <h2>Zeitrechner</h2>
+                      <input type="datetime-local" name="from" required>
+                      <input type="datetime-local" name="to" required>
+                      <br>
+                      <br>
+                      <input type="submit" value="Abschicken." onclick="calculate();">
+                      <br>
+                      <br>
+                      <span id="result" style="font-size: 1.25em;"></span>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </main>
+   </body>
+</html>
