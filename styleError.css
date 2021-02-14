@@ -36,12 +36,6 @@ li a:hover { color:grey; }
 /* Body-Hintergrund */
 body {background-image: url(img/background-min.jpeg); background-size: cover; background-attachment: fixed;}
 
-/* Einstellungen fuer Lebenslauf-Seite */
-.cv_parent {display: flex; justify-content: center; align-items: center;}
-.cv_child { margin-top: 5em; text-align: center;}
-#cv {color: white; font-size: 3em; }
-.cv_row { justify-content: center; align-items: center;}
-.cv_column {display: flex; flex-direction: column; flex-basis: 100%; flex: 1; text-align: center; justify-content: center; font-size: 1.25em;}
-span {font-size: 1em;}
-hr {width: 50%; color: white;}
-.accomplishment {font-size: 1.25em;}
+.error_parent {display: flex; justify-content: center; align-items: center;}
+.error_child { margin-top: 5em; text-align: center;}
+.error {color: white; font-size: 3em; }
