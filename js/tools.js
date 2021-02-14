@@ -1,7 +1,7 @@
 function calculateDateDifference() {
     //Empty elements
-    document.getElementsByClassName("result")[0] == "";
-    document.getElementsByClassName("result")[1] == "";
+    document.getElementsByClassName("result")[0].innerHTML = "";
+    document.getElementsByClassName("result")[1].innerHTML = "";
 
     var startDate = new Date(document.getElementsByName("from")[0].value);
     var endDate = new Date(document.getElementsByName("to")[0].value);
@@ -31,8 +31,8 @@ function calculateDateDifference() {
 
 function calculateWorkEnd() {
     //Empty Elements
-    document.getElementsByClassName("result")[0] == "";
-    document.getElementsByClassName("result")[1] == "";
+    document.getElementsByClassName("result")[0].innerHTML = "";
+    document.getElementsByClassName("result")[1].innerHTML = "";
 
     var startDate = new Date(document.getElementsByName("start")[0].value);
     var endDate = null;
