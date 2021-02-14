@@ -45,6 +45,6 @@ function calculateWorkEnd() {
         result.innerHTML = "Bitte Feld ausfüllen."
     } else {
         endDate = new Date(startDate.getTime() + (8 * 60 * 60 * 1000 + 1000 * 60 * 30));
-        result.innerHTML += "Nach 8:30 Arbeitszeit, kannst du um " + endDate.getHours() + ":" + endDate.getMinutes() + " Uhr Feierabend machen";
+        result.innerHTML += "Nach 8:30 Stunden Arbeitszeit, kannst du um " + endDate.getHours() + ":" + endDate.getMinutes() + " Uhr Feierabend machen";
     }
 }
