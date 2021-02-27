@@ -21,9 +21,9 @@ li a {
   text-decoration: none;
   font-size: 1.5em;
 }
-li a:hover { color:grey; }
+li a:hover { color: grey; }
 
-.center_menu { display: flex; justify-content: center;}
+.center_menue { display: flex; justify-content: center;}
 
 /* Mobile Menu */
 

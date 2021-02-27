@@ -21,9 +21,13 @@ li a {
   text-decoration: none;
   font-size: 1.5em;
 }
-li a:hover { color:grey; }
+li a:hover { color: grey; }
 
-.center_menu { display: flex; justify-content: center;}
+.center_menue { display: flex; justify-content: center;}
+
+/* Mobile Menu */
+
+.mobile_menue {display: none;}
 
 .hamburger {
   cursor: pointer;
@@ -45,64 +49,40 @@ li a:hover { color:grey; }
 
   .center_menue {display: none;}
 
-  /* Mobile Menu */
+  .hamburger {display: inline-block;}
 
-  .mobile_menue {display: none;}
-
-  .hamburger {
-    cursor: pointer;
+  .bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
   }
 
-  .mobile_links{display: none;}
-
-  @media screen and (max-width: 600px) {
-    .mobile_menue {display: flex; align-items: center; justify-content: space-between;}
-
-    .mobile_start {
-      color: white;
-      text-align: center;
-      padding: 16px;
-      text-decoration: none;
-      font-size: 1.5em;
-    }
-    .mobile_start:hover {color: grey;}
-
-    .center_menue {display: none;}
-
-    .hamburger {display: inline-block;}
-
-    .bar1, .bar2, .bar3 {
-      width: 35px;
-      height: 5px;
-      background-color: white;
-      margin: 6px 0;
-      transition: 0.4s;
-    }
-
-    .change .bar1 {
-      -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
-      transform: rotate(-45deg) translate(-9px, 6px) ;
-    }
-
-    .change .bar2 {
-      opacity: 0;
-    }
-
-    .change .bar3 {
-      -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
-      transform: rotate(45deg) translate(-8px, -8px) ;
-    }
-
-    .mobile_links a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 16px;
-      text-decoration: none;
-      font-size: 1.5em;
-    }
-    .mobile_links a:hover {color: grey;}
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+    transform: rotate(-45deg) translate(-9px, 6px) ;
   }
+
+  .change .bar2 {
+    opacity: 0;
+  }
+
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+    transform: rotate(45deg) translate(-8px, -8px) ;
+  }
+
+  .mobile_links a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
+  .mobile_links a:hover {color: grey;}
+}
 
 /* Font-Einstellungen fuer gesamtes Dokument */
 * {font-family: 'Oswald', sans-serif; text-transform: uppercase;}
