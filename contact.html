@@ -20,16 +20,32 @@
       <link rel="stylesheet" href="styleContact.css" type="text/css">
       <link href="https://fonts.googleapis.com/css?family=Cardo:400,700|Oswald" rel="stylesheet">
       <script src="https://www.google.com/recaptcha/api.js?render=6LcY-8wZAAAAACcVCpv6fSdau9zrdpK_fOSzvvNB"></script>
+      <script type="text/javascript" src="js/hamburger.js"></script>
    </head>
    <body>
      <nav>
-        <ul class="center_menu">
+        <ul class="center_menue">
            <li><a href="index.html">Start</a></li>
            <li><a href="cv.html">Lebenslauf</a></li>
            <li><a href="projects.html">Projekte</a></li>
            <li><a href="tools.html">Tools</a></li>
            <li><a href="contact.html">Kontakt</a></li>
          </ul>
+         <div class="mobile_menue">
+           <a href="index.html" class="mobile_start">Start</a>
+           <div class="hamburger" onclick="animateHamburger(this);">
+             <div class="bar1"></div>
+             <div class="bar2"></div>
+             <div class="bar3"></div>
+           </div>
+         </div>
+         <div class="mobile_links">
+           <a href="index.html">Start</a>
+           <a href="cv.html">Lebenslauf</a>
+           <a href="projects.html">Projekte</a>
+           <a href="tools.html">Tools</a>
+           <a href="contact.html">Kontakt</a>
+         </div>
      </nav>
       <main>
          <div class="contact_parent">
