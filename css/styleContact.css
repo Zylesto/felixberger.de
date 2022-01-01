@@ -1,0 +1,35 @@
+/* Settings for Contact-Page */
+.contact_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_child {
+    margin-top: 10em;
+    text-align: center;
+}
+
+.contact {
+    color: white;
+    font-size: 3em;
+}
+
+.contact2 {
+    color: white;
+    font-size: 1.25em;
+}
+
+#input_button {
+    margin-top: 1.25em;
+    color: black;
+}
+
+#contact_textarea {
+    resize: none;
+    color: black;
+}
+
+.cv_column {
+    font-size: 1.25em;
+}

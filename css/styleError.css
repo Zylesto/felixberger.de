@@ -1,0 +1,16 @@
+/* Settings for Errorpage */
+.error_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error_child {
+    margin-top: 5em;
+    text-align: center;
+}
+
+.error {
+    color: white;
+    font-size: 3em;
+}

@@ -1,0 +1,40 @@
+/* Settings for Projectpage */
+.projects_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects_child {
+    margin-top: 5em;
+    text-align: center;
+}
+
+#projects {
+    color: white;
+    font-size: 3em;
+}
+
+.projects_description {
+    text-align: center;
+    font-size: 1.25em;
+    margin-bottom: 5em;
+}
+
+#projects_description_MultiTool {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+#projects_download, #projects_criticism, #project_github {
+    font-size: 1.25em;
+}
+
+#show_content:hover {
+    color: grey;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,24 @@
+/* Settings for Toolpage */
+.tools_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tools_child {
+    margin-top: 5em;
+    text-align: center;
+}
+
+#tools {
+    color: white;
+    font-size: 3em;
+}
+
+input {
+    color: black;
+}
+
+.result {
+    font-size: 1.25em;
+}

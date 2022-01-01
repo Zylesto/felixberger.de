@@ -1,0 +1,20 @@
+/* Settings for Welcomepage */
+.welcome_parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome_child {
+    margin-top: 10em;
+}
+
+#welcome {
+    color: white;
+    font-size: 3em;
+    transition: transform 3s;
+}
+
+#welcome:hover {
+    transform: rotate(360deg);
+}
