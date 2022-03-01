@@ -1,4 +1,9 @@
 /* Settings for Projectpage */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .projects_container {
     display: flex;
     flex-wrap: wrap;
@@ -19,15 +24,11 @@ h1 {
     font-size: 3em;
 }
 
-#projects {
-    color: white;
-    font-size: 3em;
-}
-
 img {
-    max-width: 100%;
+    width: 75%;
     height: auto;
     margin: 3em;
+    border-radius: 1em;
 }
 
 .img_container {
@@ -54,7 +55,7 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100px;
+    width: auto;
     color: white;
     visibility: hidden;
     opacity: 0;
