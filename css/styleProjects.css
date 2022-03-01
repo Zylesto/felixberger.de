@@ -1,6 +1,7 @@
 /* Settings for Projectpage */
 .projects_container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     flex-direction: row;
@@ -27,7 +28,6 @@ img {
     max-width: 100%;
     height: auto;
     margin: 3em;
-    border: white 2px;
 }
 
 .img_container {
