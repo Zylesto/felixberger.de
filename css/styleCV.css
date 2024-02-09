@@ -1,18 +1,30 @@
 /* Settings for CV-Page */
-.cv_parent {
+.heading {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 5em;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+@media screen and (max-width: 600px) {
+    .linkedin {
+        display: none !important;
+    }
+  }
+
+.linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cv_child {
     margin-top: 5em;
     text-align: center;
-}
-
-#cv {
-    color: white;
-    font-size: 3em;
 }
 
 .cv_row {
