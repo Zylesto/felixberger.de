@@ -8,10 +8,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
   <link rel="icon" type="../image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <title>Über mich</title>
+  <title>Über</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="../css/contact.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Unica+One&display=swap" rel="stylesheet">
+  <script src="https://www.google.com/recaptcha/api.js?render=6Le4BB4rAAAAACYeaNpwBlBmwd-7qOYVjmtOR4_u"></script>
   <script src="../js/contact.js" defer></script>
   <script>
     const links = document.links;
@@ -27,9 +28,9 @@
     <div class="hdr-wrapper section-inner">
       <div class="site-branding"><a href="../index.html">/FelixBerger/</a></div>
       <nav class="site-nav">
-        <a href="https://www.linkedin.com/in/felix-berger-95b492177" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="index.html">Über mich</a>
-        <a href="https://github.com/Zylesto" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/felix-berger-95b492177" target="_blank">LinkedIn</a>
+        <a href="index.html">Über</a>
+        <a href="https://github.com/Zylesto" target="_blank">GitHub</a>
       </nav>
     </div>
   </header>
@@ -58,10 +59,12 @@
         </ul>
       </section>
 
+
       <section>
         <h2>Kontakt</h2>
         <p>Für Anfragen nutze bitte mein <a href="/contact/" id="open-contact">Kontaktformular</a> – so bleibt deine Nachricht sicher und ich vermeide Spam.</p>
       </section>
+
     </div>
   </main>
 
@@ -69,15 +72,15 @@
     <div class="modal-content animated fadeIn">
       <span class="close-modal">&times;</span>
       <h2>Kontaktformular</h2>
-      <form id="contact-form" action="/contact/submit" method="POST">
+      <form id="contact-form" action="../php/contact-handler.php" method="POST">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
         <label for="email">E-Mail</label>
         <input type="email" id="email" name="email" required>
         <label for="message">Nachricht</label>
         <textarea id="message" name="message" rows="4" required></textarea>
-        <div class="g-recaptcha" data-sitekey="DEIN_SITE_KEY"></div>
         <button type="submit">Senden</button>
+        <div id="contact-message" style="margin:2em !important;"></div>
       </form>
     </div>
   </div>
@@ -85,9 +88,43 @@
   <footer id="site-footer" class="section-inner thin animated fadeIn faster">
     <div style="text-align:center;">
       © 2025 <a href="/">Felix Berger</a>
+          <p>Zum Schutz vor Spam und Missbrauch ist diese Seite durch reCAPTCHA gesichert. Es gelten die <a href="https://policies.google.com/privacy">Datenschutzerklärung</a> und <a href="https://policies.google.com/terms">Nutzungsbedingungen</a> von Google.</p>
     </div>
   </footer>
 
-  <script async src="../js/bundle.min.js"></script>
+<script>
+  grecaptcha.ready(function () {
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      grecaptcha.execute('6LdD_h0rAAAAAHrLP-rdTNjVpMAFAN6zUjgdx-KD', { action: 'contact' }).then(function (token) {
+        const form = document.getElementById('contact-form');
+        const formData = new FormData(form);
+        formData.append('g-recaptcha-response', token);
+
+        fetch('../php/contact-handler.php', {
+          method: 'POST',
+          body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+          const msg = document.getElementById('contact-message');
+          msg.style.color = '#0a0';
+          msg.textContent = data.message || 'Nachricht erfolgreich gesendet.';
+          form.reset();
+        })
+        .catch(error => {
+          const msg = document.getElementById('contact-message');
+          msg.style.color = '#c00';
+          msg.textContent = 'Fehler beim Senden der Nachricht. Bitte versuche es später erneut.';
+          console.error('Fehler:', error);
+        });
+      });
+    });
+  });
+</script>
+
+<script async src="../js/bundle.min.js"></script>
+
 </body>
 </html>

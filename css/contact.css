@@ -98,3 +98,5 @@ body#page {
     text-align: center;
   }
   
+  .grecaptcha-badge { visibility: hidden !important; }
+  
