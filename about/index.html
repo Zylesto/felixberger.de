@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de-de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="author" content="Felix Berger">
+  <meta name="theme-color" content="#000000">
+  <title>Über mich</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Unica+One&display=swap" rel="stylesheet">
+  <script>
+    const links = document.links;
+    for (let link of links) {
+      if (link.hostname !== window.location.hostname) {
+        link.target = "_blank";
+      }
+    }
+  </script>
+</head>
+<body id="page">
+  <header id="site-header" class="animated slideInUp">
+    <div class="hdr-wrapper section-inner">
+      <div class="site-branding"><a href="../index.html">/FelixBerger/</a></div>
+      <nav class="site-nav">
+        <a href="https://www.linkedin.com/in/felix-berger-95b492177" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="index.html">Über mich</a>
+        <a href="https://github.com/Zylesto" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-main section-inner thin animated fadeIn faster">
+    <h1>Über mich</h1>
+    <div class="content">
+      <p>Hallo! Ich bin Felix Berger und studiere seit 2018 Informatik mit Schwerpunkt Cyber Security. Zurzeit arbeite ich mich gerade in Penetrationstests ein und erforsche moderne kryptografische Verfahren.</p>
+      <p>Diese Seite sammelt meine Gedanken, Erkenntnisse und Projekte im Bereich IT‑Sicherheit. Stöbere gerne und vernetze dich mit mir.</p>
+
+      <section>
+        <h2>Aktuelle Tätigkeiten</h2>
+        <ul>
+          <li>Automatisierung von Threat-Modellen mit Python zur Verbesserung der Sicherheitsanalysen</li>
+          <li>Entwicklung von Skripten zur Umwandlung von Terraform-Dateien in C4-Dataflow-Diagramme zur Visualisierung von Sicherheitsarchitekturen</li>
+          <li>Implementierung von Tools zur dynamischen Erkennung und Modellierung von potenziellen Bedrohungen basierend auf cloud-spezifischen Ressourcen</li>
+          <li>Modellierung kundenspezifischer OWASP-Konfigurationen mithilfe einer dynamisch konfigurierbaren Logik für flexible n×m-Risikobewertungen</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Ausbildung</h2>
+        <ul>
+          <li><a href="https://www.th-nuernberg.de/" target="_blank" rel="noopener">Bachelor Informatik, TH Nürnberg</a></li>
+          <li><a href="https://www.fau.de/" target="_blank" rel="noopener">Master Informatik, FAU Erlangen‑Nürnberg</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Kontakt</h2>
+        <p>Für Anfragen nutze bitte mein <a href="/contact/">Kontaktformular</a> – so bleibt deine Nachricht sicher und ich vermeide Spam.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="section-inner thin animated fadeIn faster">
+    <div style="text-align:center;">
+      © 2025 <a href="/">Felix Berger</a>
+    </div>
+  </footer>
+
+  <script async src="../js/bundle.min.js"></script>
+</body>
+</html>
