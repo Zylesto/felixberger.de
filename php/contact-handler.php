@@ -2,7 +2,7 @@
 // php/contact-handler.php with reCAPTCHA verification
 
 // reCAPTCHA secret key
-$recaptchaSecret = getenv('RECAPTCHA_SECRET') ?: '6LcY-8wZAAAAAIwa_zq163QNrn_rP8ZBg_c7kAyg';
+$recaptchaSecret = getenv('RECAPTCHA_SECRET') ?: '6LcK2ROrAAAAAGBsvZa-EAt2S3Oydoa9xrAcaCGM';
 
 // Only accept POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -18,7 +18,7 @@ $response = file_get_contents($verifyUrl . '?secret=' . urlencode($recaptchaSecr
 $decoded = json_decode($response, true);
 if (!isset($decoded['success']) || $decoded['success'] !== true) {
     http_response_code(400);
-    echo 'reCAPTCHA verification failed. Bitte versuche es erneut.';
+    echo 'Fehler beim Senden der Nachricht. Bitte versuche es später erneut. Bitte versuche es erneut.';
     exit;
 }
 
