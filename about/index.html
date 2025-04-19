@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="author" content="Felix Berger">
   <meta name="theme-color" content="#000000">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="../image/png" sizes="32x32" href="images/favicon-32x32.png">
   <title>Über mich</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/contact.css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans|Unica+One&display=swap" rel="stylesheet">
+  <script src="../js/contact.js" defer></script>
   <script>
     const links = document.links;
     for (let link of links) {
@@ -55,10 +60,27 @@
 
       <section>
         <h2>Kontakt</h2>
-        <p>Für Anfragen nutze bitte mein <a href="/contact/">Kontaktformular</a> – so bleibt deine Nachricht sicher und ich vermeide Spam.</p>
+        <p>Für Anfragen nutze bitte mein <a href="/contact/" id="open-contact">Kontaktformular</a> – so bleibt deine Nachricht sicher und ich vermeide Spam.</p>
       </section>
     </div>
   </main>
+
+  <div id="contact-modal" class="modal">
+    <div class="modal-content animated fadeIn">
+      <span class="close-modal">&times;</span>
+      <h2>Kontaktformular</h2>
+      <form id="contact-form" action="/contact/submit" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Nachricht</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <div class="g-recaptcha" data-sitekey="DEIN_SITE_KEY"></div>
+        <button type="submit">Senden</button>
+      </form>
+    </div>
+  </div>
 
   <footer id="site-footer" class="section-inner thin animated fadeIn faster">
     <div style="text-align:center;">
