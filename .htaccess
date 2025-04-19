@@ -1,7 +1,5 @@
-#Rewrite everything to https
-RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-DirectoryIndex html index.html
-ErrorDocument 404 /html/error.html
+ErrorDocument 404 /404.html
 
+# RewriteEngine On
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^ index.html [L]
