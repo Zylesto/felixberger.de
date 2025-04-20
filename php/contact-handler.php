@@ -6,11 +6,7 @@ $recaptchaSecret = 'INSERT_KEY';
 
 // Only accept POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(405);
-    header('Content-Type: application/json');
-    echo json_encode([
-        'message' => 'Fehler beim Senden der Nachricht. Bitte versuche es später erneut.'
-    ]);
+    header('Location: /404.html');
     exit;
 }
 
