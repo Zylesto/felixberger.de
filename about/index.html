@@ -97,7 +97,7 @@
     document.getElementById('contact-form').addEventListener('submit', function (e) {
       e.preventDefault();
 
-      grecaptcha.execute('6LdD_h0rAAAAAHrLP-rdTNjVpMAFAN6zUjgdx-KD', { action: 'contact' }).then(function (token) {
+      grecaptcha.execute('6Le4BB4rAAAAACYeaNpwBlBmwd-7qOYVjmtOR4_u', { action: 'contact' }).then(function (token) {
         const form = document.getElementById('contact-form');
         const formData = new FormData(form);
         formData.append('g-recaptcha-response', token);
