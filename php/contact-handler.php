@@ -2,7 +2,7 @@
 // php/contact-handler.php with reCAPTCHA v3 verification
 
 // reCAPTCHA secret key (v3)
-$recaptchaSecret = 'INSERT_KEY';
+$recaptchaSecret = 'SECRET-KEY';
 
 // Only accept POST requests
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -42,7 +42,7 @@ if (
     || ($decoded['action'] ?? '')  !== 'contact'
     || ($decoded['score']   ?? 0)  <  $minScore
 ) {
-    http_response_code(400);
+    http_response_code(500);
     header('Content-Type: application/json');
     echo json_encode([
         'message' => 'Fehler beim Senden der Nachricht. Bitte versuche es später erneut.'
@@ -75,13 +75,13 @@ if (empty($name) || !$email || empty($message)) {
 }
 
 // Prepare email
-$to      = 'fberger@felixberger.de';
+$to      = 'felix.berger98@icloud.com';
 $subject = "Kontaktanfrage von $name";
 $body    = "Name: $name\nE-Mail: $email\n\nNachricht:\n$message\n";
 $headers = [
-    'From'         => sprintf('%s <%s>', $name, $email),
-    'Reply-To'     => $email,
-    'Content-Type' => 'text/plain; charset=UTF-8',
+    'From' => 'kontakt@felixberger.de',
+    'Reply-To' => $email,
+    'Content-Type' => 'text/plain; charset=UTF-8'
 ];
 
 // Send email
